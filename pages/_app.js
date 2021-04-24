@@ -1,14 +1,20 @@
-import App from 'next/app'
-import { Provider as StyletronProvider } from 'styletron-react'
-import { styletron } from '../styletron'
+import '../styles/globals.css'
+import styled from 'styled-components';
 
-export default class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props
-    return (
-      <StyletronProvider value={styletron}>
-        <Component {...pageProps} />
-      </StyletronProvider>
-    )
-  }
+const Body = styled.body`
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif!important;
+  background-color: #141414;
+  color: #cbcbcb;
+`;
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <Body>
+      <Component {...pageProps} />
+    </Body>
+  )
 }
+
+export default MyApp

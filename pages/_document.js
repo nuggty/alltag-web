@@ -1,47 +1,20 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { Provider as StyletronProvider } from 'styletron-react'
-import { styletron } from '../styletron'
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-class MyDocument extends Document {
-  static async getInitialProps(context) {
-    const renderPage = () =>
-      context.renderPage({
-        enhanceApp: (App) => (props) => (
-          <StyletronProvider value={styletron}>
-            <App {...props} />
-          </StyletronProvider>
-        ),
-      })
+export default class MyDocument extends Document {
+    render() {
+        return (
+            <Html>
+                <Head>
+                    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
-    const initialProps = await Document.getInitialProps({
-      ...context,
-      renderPage,
-    })
-    const stylesheets = styletron.getStylesheets() || []
-    return { ...initialProps, stylesheets }
-  }
-
-  render() {
-    return (
-      <Html>
-        <Head>
-          {this.props.stylesheets.map((sheet, i) => (
-            <style
-              className="_styletron_hydrate_"
-              dangerouslySetInnerHTML={{ __html: sheet.css }}
-              media={sheet.attrs.media}
-              data-hydrate={sheet.attrs['data-hydrate']}
-              key={i}
-            />
-          ))}
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    )
-  }
+                    <link rel="preconnect" href="https://fonts.gstatic.com" />
+                    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+                </Head>
+                <body>
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        )
+    }
 }
-
-export default MyDocument
