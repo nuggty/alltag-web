@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Modal from './components/Modal'
+import Modal from '../components/Modal';
 
 const ButtonSignUp = styled.p`
   color: #CBCBCB;
@@ -19,7 +19,6 @@ const ButtonSignUp = styled.p`
     }
 `;
 
-
 const Logo = styled.span`
   font-size: 30px;
   color: #4A005C;
@@ -27,7 +26,6 @@ const Logo = styled.span`
   margin-bottom: 1em;
   display: block;
 `;
-
 
 const Button = styled.input`
   padding: 20px 60px;
@@ -45,17 +43,14 @@ const Button = styled.input`
   }
 `;
 
-
 const StyledLogin = styled.div`
   text-align: center;
   position: relative;
 `;
 
-
 const Form = styled.form`
     min-height: 10rem;
 `;
-
 
 const Input = styled.input`
     background-color: #1D1D1D;
@@ -94,13 +89,6 @@ const Login = () => {
         <>
             <Main>
                 <Form>
-                    <span
-                        style={{
-                            color: "#4A005C",
-                            fontSize: "30px",
-                            fontWeight: "600",
-                            display: "table-column"
-                        }}>AllTag</span>
                     <StyledLogin>
                         <Logo >AllTag</Logo>
                         <Input type="text" placeholder="Username" name="username" />
@@ -112,10 +100,28 @@ const Login = () => {
                         <ButtonSignUp >Don't have an account? <a className="link" onClick={() => setIsModalVisible(true)}>Sign Up</a></ButtonSignUp>
                     </StyledLogin>
                 </Form>
-                {isModalVisible ? <Modal>
-                    Está funcionando?
-                </Modal> : null}
             </Main>
+            {isModalVisible ? (
+                <Modal onClose={() => setIsModalVisible(false)}>
+                    <div style={{
+                        position: "relative",
+                        textAlign: "center",
+                    }}>
+                        <Logo >Register</Logo>
+
+                        <Input type="text" placeholder="Username" name="username" />
+
+                        <Input type="email" placeholder="Email" name="username" />
+
+                        <Input type="password" placeholder="Password" name="username" />
+
+                        <Input type="password" placeholder="Repeat password" name="username" />
+
+                        
+                        <Button type="button" value="Sign Up"></Button>
+                    </div>
+                </Modal>
+            ) : null}
         </>
     )
 }

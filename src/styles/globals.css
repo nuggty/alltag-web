@@ -6,6 +6,14 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+::-moz-selection { /* Code for Firefox */
+  background: #4A005C;
+}
+
+::selection {
+  background: #4A005C;
+}
+
 a {
   color: inherit;
   text-decoration: none;
