@@ -11,10 +11,6 @@ const Main = styled.main`
 const Profile = () => {
   return (
     <>
-
-      <Main>
-
-      </Main>
     </>
   )
 }

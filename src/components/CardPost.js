@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ImageProfile from './ImageProfile';
+import Loading from './Loading';
 
 const Nick = styled.div`
     align-items: center;
@@ -106,38 +107,47 @@ const CardUser = styled.div`
 `;
 
 const CardPost = (props) => {
-    return (
-        <Card>
-            <CardHead bg={props.bg}>
-                <CardUser>
-                    <StyledDots>
-                        <Link href="#"><a><i class="far fa-ellipsis-v"></i></a></Link>
-                    </StyledDots>
-                    <Row margin="0">
-                        <Column maxWidth="70px" flex="15%">
-                            <ImageProfile width="67px" height="67px" />
-                        </Column>
-                        <ColumnNick maxWidth="30%" flex="30%">
-                            <Nick>
-                                <a href="#" className="nickname">nuggty</a>
-                                <br />
-                                <span className="username">@nuggty • 1h</span>
-                            </Nick>
-                        </ColumnNick>
-                        <ColumnFeeling maxWidth="30%" flex="30%">
-                            <span className="feeling">🤔 Thinking</span>
-                        </ColumnFeeling>
 
-                    </Row>
-                </CardUser>
-                <CardBody bg={props.bg}>
-                    <p>Mollit qui irure cupidatat eu sit id amet id do consequat dolor. Dolor aliqua deserunt Lorem reprehenderit aliqua cillum Lorem aliqua. Ipsum ea excepteur laboris pariatur ipsum reprehenderit exercitation est officia. Consequat aliqua exercitation aliquip amet fugiat ea dolor proident occaecat ea et ullamco.
+    const [loading, setLoading] = useState(true)
 
-Ad elit deserunt culpa sint veniam cupidatat aute. Non nisi enim ad ut. Aliqua amet excepteur sint ea duis in magna et et duis aute aliquip aliquip irure.</p>
-                </CardBody>
-            </CardHead>
-        </Card>
-    )
+    useEffect(() => {
+        setLoading(props.loading)
+    })
+
+    return (<>
+
+        { loading === true ? (<Loading />) : (
+            <Card>
+                <CardHead bg={props.bg}>
+                    <CardUser>
+                        <StyledDots>
+                            <Link href="#"><a><i class="far fa-ellipsis-v"></i></a></Link>
+                        </StyledDots>
+                        <Row margin="0">
+                            <Column maxWidth="70px" flex="15%">
+                                <ImageProfile width="67px" height="67px" />
+                            </Column>
+                            <ColumnNick maxWidth="30%" flex="30%">
+                                <Nick>
+                                    <a href="#" className="nickname">nuggty</a>
+                                    <br />
+                                    <span className="username">@nuggty • 1h</span>
+                                </Nick>
+                            </ColumnNick>
+                            <ColumnFeeling maxWidth="30%" flex="30%">
+                                <span className="feeling">🤔 Thinking</span>
+                            </ColumnFeeling>
+
+                        </Row>
+                    </CardUser>
+                    <CardBody bg={props.bg}>
+                        <p>Mollit qui irure cupidatat eu sit id amet id do consequat dolor. Dolor aliqua deserunt Lorem reprehenderit aliqua cillum Lorem aliqua. Ipsum ea excepteur laboris pariatur ipsum reprehenderit exercitation est officia. Consequat aliqua exercitation aliquip amet fugiat ea dolor proident occaecat ea et ullamco.
+
+                            Ad elit deserunt culpa sint veniam cupidatat aute. Non nisi enim ad ut. Aliqua amet excepteur sint ea duis in magna et et duis aute aliquip aliquip irure.</p>
+                    </CardBody>
+                </CardHead>
+            </Card>)}
+    </>)
 }
 
 export default CardPost

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CardText from '../components/CardText'
 import styled from 'styled-components';
 import Menu from '../components/Menu';
 import CardPost from '../components/CardPost';
+import Loading from '../components/Loading';
 
 const user = {
     purple: "#4A005C",
@@ -32,21 +33,29 @@ const Container = styled.div`
     
 `;
 
+const Space = styled.div`
+margin-top:70px;
+`
+
 const Home = () => {
+
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() =>{
+        setTimeout(() => {
+            setLoading(false)
+        }, 5000);
+    })
+
     return (
         <>
             <Container>
                 <Content>
                     <CardText />
-                    <CardPost bg={user.purple} />
-                    <CardPost bg={user.blue} />
-                    <CardPost bg={user.yellow} />
-                    <CardPost bg={user.pink} />
-                    <CardPost bg={user.gray} />
-                    <CardPost bg={user.green} />
-                    
+                    <CardPost bg={user.purple} loading={loading}/>
                 </Content>
             </Container>
+            <Space />
             <Menu />
         </>
     )

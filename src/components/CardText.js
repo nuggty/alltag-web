@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ImageProfile from './ImageProfile';
+import Loading from './Loading';
+
 
 const ButtonFeeling = styled.span`
-    font-weight: 600;
+font-weight: 600;
     cursor: pointer;
     transition: 0.25s;
     &:hover {
         color: #4A005C;
         transition: 0.25s;
     }
-
+    
     .link {
         font-size: 20px;
     }
-`;
+    `;
 
 
 const TextArea = styled.textarea`
-  width: 100%;
+    width: 100%;
   margin-top: 10px;
   background-color: transparent;
   font-family: 'Lato', sans-serif;
@@ -30,7 +32,7 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  padding: 5px 15px;
+padding: 5px 15px;
   background-color: #363636;
   color: #cbcbcb;
   margin-top: -6px;
@@ -43,7 +45,7 @@ const Button = styled.button`
   &:hover {
       background-color: #4A005C;
       transition: 0.25s;
-  }
+    }
 `;
 
 const Column = styled.div`
@@ -61,14 +63,14 @@ const Row = styled.div.attrs((props) => ({
 `;
 
 const StyledButton = styled.div`
-    display:block;
-    float: right;
-    text-align: -moz-right;
+display:block;
+float: right;
+text-align: -moz-right;
 `;
 
 
 const Card = styled.div`
-  width: 580px;
+width: 580px;
   height: 110px;
   background-color: #1D1D1D;
   border-radius: 16px;
@@ -76,39 +78,40 @@ const Card = styled.div`
   margin-right: 15px;
   margin-bottom: 2em;
   @media(max-width: 900px) {
-  max-width:100%;
-  }
-`;
+      max-width:100%;
+    }
+    `;
 
 
 const CardText = () => {
+
     return (
-            <Card>
-                <Row>
-                    <Column maxWidth="70px" flex="15%">
-                        <ImageProfile width="67px" height="67px" />
-                    </Column>
-                    <Column maxWidth="80%" flex="80%">
-                        <TextArea placeholder="What's happening today?" />
-                    </Column>
-                </Row>
-                <Row margin="0 13px">
-                    <Column maxWidth="15%" flex="15%" />
-                    <Column maxWidth="50%" flex="50%">
-                        <ButtonFeeling>
-                            <i style={{
-                                marginRight: "1em"
-                            }} className="link fad fa-image" />
-                        </ButtonFeeling>
-                        <ButtonFeeling><i class="fad fa-smile-plus" /> Feeling</ButtonFeeling>
-                    </Column>
-                    <Column maxWidth="35%" flex="35%">
-                        <StyledButton>
-                            <Button type="button">Send</Button>
-                        </StyledButton>
-                    </Column>
-                </Row>
-            </Card>
+        <Card>
+            <Row>
+                <Column maxWidth="70px" flex="15%">
+                    <ImageProfile width="67px" height="67px" />
+                </Column>
+                <Column maxWidth="80%" flex="80%">
+                    <TextArea placeholder="What's happening today?" />
+                </Column>
+            </Row>
+            <Row margin="0 13px">
+                <Column maxWidth="15%" flex="15%" />
+                <Column maxWidth="50%" flex="50%">
+                    <ButtonFeeling>
+                        <i style={{
+                            marginRight: "1em"
+                        }} className="link fad fa-image" />
+                    </ButtonFeeling>
+                    <ButtonFeeling><i class="fad fa-smile-plus" /> Feeling</ButtonFeeling>
+                </Column>
+                <Column maxWidth="35%" flex="35%">
+                    <StyledButton>
+                        <Button type="button">Send</Button>
+                    </StyledButton>
+                </Column>
+            </Row>
+        </Card>
     )
 }
 

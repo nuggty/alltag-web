@@ -58,6 +58,7 @@ bottom:-1px;
 width:100%;
 justify-content: center;
 display: flex;
+margin-top: 70px;
 `;
 
 const Menu = () => {
