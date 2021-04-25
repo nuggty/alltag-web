@@ -60,23 +60,18 @@ justify-content: center;
 display: flex;
 `;
 
-const Teste = styled.div`
-`;
-
-
 const Menu = () => {
     return (
         <>
             <FixedBottom>
                 <Content>
                     <StyledBottom>
-                        <ButtonHome href="/"><i class="fas fa-house" /></ButtonHome>
+                        <ButtonHome href="/"><i className="fas fa-house" /></ButtonHome>
                         <ProfileButton>
                             <ImageProfile height="50px" width="50px" />
                         </ProfileButton>
-                        <IconCog  >
-                            <Link href="#"><a style={{
-                            }}><i class="fas fa-cog" /></a></Link>
+                        <IconCog>
+                            <Link href="#"><a><i className="fas fa-cog" /></a></Link>
                         </IconCog>
                     </StyledBottom>
                 </Content>

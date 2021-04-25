@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const user = { 
+    username:"nuggty",
+    photo:"https://arquivos.icartao.me/8b149b4e6a7b833b5920a4f89543fe88.jpg"
+}
+
 const ImageCircle = styled.div`
   border-radius: 50%;
   width: ${props => props.width};
@@ -13,7 +18,7 @@ const ImageCircle = styled.div`
   cursor: pointer;
   &:hover {
     border: #4A005C solid 7px;
-    transition: linear 0.25s;
+    transform: scale(1.04167);
   }
     img {
         object-fit: cover;
@@ -27,7 +32,7 @@ const ImageProfile = (props) => {
     return (
         <>
             <ImageCircle width={props.width} height={props.height}>
-                <a href="#"><img src="https://arquivos.icartao.me/8b149b4e6a7b833b5920a4f89543fe88.jpg" /></a>
+                <a href="#"><img alt={user.username} src={user.photo} /></a>
             </ImageCircle>
         </>
     )

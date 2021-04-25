@@ -74,7 +74,7 @@ const Card = styled.div`
   border-radius: 16px;
   margin-left: 15px;
   margin-right: 15px;
-  
+  margin-bottom: 2em;
   @media(max-width: 900px) {
   max-width:100%;
   }
@@ -83,7 +83,6 @@ const Card = styled.div`
 
 const CardText = () => {
     return (
-        <>
             <Card>
                 <Row>
                     <Column maxWidth="70px" flex="15%">
@@ -101,7 +100,7 @@ const CardText = () => {
                                 marginRight: "1em"
                             }} className="link fad fa-image" />
                         </ButtonFeeling>
-                        <ButtonFeeling><i className="fas fa-smile-plus" /> Feeling</ButtonFeeling>
+                        <ButtonFeeling><i class="fad fa-smile-plus" /> Feeling</ButtonFeeling>
                     </Column>
                     <Column maxWidth="35%" flex="35%">
                         <StyledButton>
@@ -110,7 +109,6 @@ const CardText = () => {
                     </Column>
                 </Row>
             </Card>
-        </>
     )
 }
 

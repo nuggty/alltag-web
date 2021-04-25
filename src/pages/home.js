@@ -2,6 +2,16 @@ import React from 'react'
 import CardText from '../components/CardText'
 import styled from 'styled-components';
 import Menu from '../components/Menu';
+import CardPost from '../components/CardPost';
+
+const user = {
+    purple: "#4A005C",
+    blue: "#3700b3",
+    yellow: "#ffad1f",
+    pink: "#e14594",
+    gray: "#525252",
+    green: "#616f39",
+}
 
 const Content = styled.div`
   max-width: 100%;
@@ -26,8 +36,15 @@ const Home = () => {
     return (
         <>
             <Container>
-                <Content >
+                <Content>
                     <CardText />
+                    <CardPost bg={user.purple} />
+                    <CardPost bg={user.blue} />
+                    <CardPost bg={user.yellow} />
+                    <CardPost bg={user.pink} />
+                    <CardPost bg={user.gray} />
+                    <CardPost bg={user.green} />
+                    
                 </Content>
             </Container>
             <Menu />
