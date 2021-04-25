@@ -93,6 +93,12 @@ const CardBody = styled.div`
   padding-left: 15px;
   font-size: 18px;
   background-color: #1D1D1D;
+  transition: 0.25s;
+
+  &:hover {
+    background-color: #242424;
+    transition: 0.25s;
+  }
 `;
 
 const StyledDots = styled.div`
@@ -118,7 +124,7 @@ const CardUser = styled.div`
   position: relative;
 `;
 
-const CardPost = (props) => {
+const CardPosts = (props) => {
 
     const [loading, setLoading] = useState(true)
 
@@ -152,14 +158,16 @@ const CardPost = (props) => {
 
                         </Row>
                     </CardUser>
+                    <Link href="#"><a>
                         <CardBody bg={props.bg}>
                             <p>Mollit qui irure cupidatat eu sit id amet id do consequat dolor. Dolor aliqua deserunt Lorem reprehenderit aliqua cillum Lorem aliqua. Ipsum ea excepteur laboris pariatur ipsum reprehenderit exercitation est officia. Consequat aliqua exercitation aliquip amet fugiat ea dolor proident occaecat ea et ullamco.
 
                             Ad elit deserunt culpa sint veniam cupidatat aute. Non nisi enim ad ut. Aliqua amet excepteur sint ea duis in magna et et duis aute aliquip aliquip irure.</p>
                         </CardBody>
+                    </a></Link>
                 </CardHead>
             </Card>)}
     </>)
 }
 
-export default CardPost
+export default CardPosts

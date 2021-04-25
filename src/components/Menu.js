@@ -14,7 +14,7 @@ transition: 0.25s;
 
 const ProfileButton = styled.div`
   position: absolute;
-  right: 50px;
+  right: 75px;
 `;
 
 

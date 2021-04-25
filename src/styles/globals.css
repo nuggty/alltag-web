@@ -11,11 +11,13 @@ body {
 
 ::-moz-selection {
   /* Code for Firefox */
-  background: #4A005C;
+  background: #cbcbcb;
+  color: #4A005C;
 }
 
 ::selection {
-  background: #4A005C;
+  background: #cbcbcb;
+  color: #4A005C;
 }
 
 a {

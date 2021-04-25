@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import CardText from '../components/CardText'
 import styled from 'styled-components';
 import Menu from '../components/Menu';
-import CardPost from '../components/CardPost';
+import CardPosts from '../components/CardPosts';
 import Loading from '../components/Loading';
+import Head from 'next/head'
 
 const user = {
     purple: "#4A005C",
@@ -16,9 +17,12 @@ const user = {
 
 const Content = styled.div`
   max-width: 100%;
-  @media(max-width: 600px) {
+  @media(max-width: 610px) {
       padding-right: 25px;
   }
+  @media(max-width: 400px) {
+    padding-right: 0;
+}
 `;
 
 
@@ -41,18 +45,21 @@ const Home = () => {
 
     const [loading, setLoading] = useState(true)
 
-    useEffect(() =>{
+    useEffect(() => {
         setTimeout(() => {
             setLoading(false)
-        }, 5000);
+        }, 1000);
     })
 
     return (
         <>
+            <Head>
+                <title>Home - AllTag</title>
+            </Head>
             <Container>
                 <Content>
                     <CardText />
-                    <CardPost bg={user.purple} loading={loading}/>
+                    <CardPosts bg={user.purple} loading={loading} />
                 </Content>
             </Container>
             <Space />

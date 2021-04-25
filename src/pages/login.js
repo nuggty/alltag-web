@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from '../components/Modal';
+import Head from 'next/head';
 
 const StyledRegister = styled.div`
   position: relative;
@@ -14,6 +15,11 @@ const ButtonSignUp = styled.p`
   margin-top: 2em;
   display:block;
   color: #CBCBCB;
+
+  @media(max-height: 400px) {
+    margin-top: 10px;
+}
+
   > .link {
     color: #4A005C;
     transition: 0.25s;
@@ -31,6 +37,10 @@ const Title = styled.span`
   font-weight: 900;
   margin-bottom: 1em;
   display: block;
+
+  @media(max-height: 400px) {
+    margin-top: 2em;
+}
 `;
 
 const Button = styled.input`
@@ -56,6 +66,10 @@ const StyledLogin = styled.div`
 
 const Form = styled.form`
     min-height: 10rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 `;
 
 const Input = styled.input`
@@ -70,7 +84,12 @@ const Input = styled.input`
     display: block;
     margin-bottom: 1em;
     border: 2px solid #ffffff00;
-    transition: 0.25s;ff00;
+    transition: 0.25s;
+
+    @media(max-height: 400px) {
+        margin-bottom: 5px;
+    }
+
     &:focus {
         outline: none;
         background-color: #2b2b2b;
@@ -79,13 +98,11 @@ const Input = styled.input`
     }
 `;
 
-const Main = styled.main`
-    height: 100vh;
-    width: 100vw;
+const Main = styled.div`
     display: flex;
     justify-content: center;
-    align-items:center;
-`;
+    align-items: center
+    `;
 
 const Login = () => {
 
@@ -93,6 +110,9 @@ const Login = () => {
 
     return (
         <>
+        <Head>
+            <title>Login - AllTag</title>
+        </Head>
             <Main>
                 <Form>
                     <StyledLogin>

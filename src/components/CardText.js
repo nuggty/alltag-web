@@ -80,6 +80,11 @@ width: 580px;
   @media(max-width: 900px) {
       max-width:100%;
     }
+
+    @media(max-width: 400px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
     `;
 
 
