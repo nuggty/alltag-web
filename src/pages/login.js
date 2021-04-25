@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from '../components/Modal';
 
+const StyledRegister = styled.div`
+  position: relative;
+  text-align: center;
+`;
+
+
 const ButtonSignUp = styled.p`
-  color: #CBCBCB;
   font-size: 20px;
   font-weight: 600;
   margin-top: 2em;
   display:block;
+  color: #CBCBCB;
   > .link {
     color: #4A005C;
     transition: 0.25s;
@@ -19,7 +25,7 @@ const ButtonSignUp = styled.p`
     }
 `;
 
-const Logo = styled.span`
+const Title = styled.span`
   font-size: 30px;
   color: #4A005C;
   font-weight: 900;
@@ -90,7 +96,7 @@ const Login = () => {
             <Main>
                 <Form>
                     <StyledLogin>
-                        <Logo >AllTag</Logo>
+                        <Title>Log In</Title>
                         <Input type="text" placeholder="Username" name="username" />
 
                         <Input type="password" placeholder="Password" />
@@ -103,11 +109,8 @@ const Login = () => {
             </Main>
             {isModalVisible ? (
                 <Modal onClose={() => setIsModalVisible(false)}>
-                    <div style={{
-                        position: "relative",
-                        textAlign: "center",
-                    }}>
-                        <Logo >Register</Logo>
+                    <StyledRegister>
+                        <Title>Register</Title>
 
                         <Input type="text" placeholder="Username" name="username" />
 
@@ -117,9 +120,8 @@ const Login = () => {
 
                         <Input type="password" placeholder="Repeat password" name="username" />
 
-                        
                         <Button type="button" value="Sign Up"></Button>
-                    </div>
+                    </StyledRegister>
                 </Modal>
             ) : null}
         </>

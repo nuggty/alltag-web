@@ -1,5 +1,7 @@
 import '../styles/globals.css'
 import styled from 'styled-components';
+import '../fw/fontawesome-pro-5.12.0-web/css/all.min.css';
+import '../fw/animate.css/animate.css';
 
 const Body = styled.body`
   margin: 0;
@@ -7,20 +9,27 @@ const Body = styled.body`
   font-family: 'Lato', sans-serif!important;
   background-color: #141414;
   color: #cbcbcb;
-  {::-moz-selection { /* Code for Firefox */
-    color: red;
-    background: yellow;
-  }
-  
-  ::selection {
-    color: red;
-    background: yellow;
-  }}
+`;
+
+const StyledLogo = styled.div`
+  justify-content: center;
+  display: flex;
+`
+
+const Logo = styled.span`
+  font-size: 30px;
+  color: #4A005C;
+  font-weight: 900;
+  position: relative;
+  justify-content: center;
 `;
 
 function MyApp({ Component, pageProps }) {
   return (
     <Body>
+      <StyledLogo>
+        <Logo>AllTag</Logo>
+      </StyledLogo>
       <Component {...pageProps} />
     </Body>
   )

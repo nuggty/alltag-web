@@ -4,7 +4,7 @@ export default class MyDocument extends Document {
     render() {
         return (
             <Html>
-                <Head>
+                <Head style={{backgroundColor: "#141414"}}>
                     <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -14,7 +14,7 @@ export default class MyDocument extends Document {
                     <Main />
                     <NextScript />
                 </body>
-            </Html>
+            </Html >
         )
     }
 }
